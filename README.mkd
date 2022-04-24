@@ -75,7 +75,7 @@ Installation
 
 ### Modify .vimrc
 
-After either Option 1 or Option 2 above, put the following two lines in your 
+After either Option 1 or Option 2 above, put the following three lines in your 
 .vimrc:
 
     syntax enable
@@ -106,7 +106,7 @@ select either the light or dark background.
 
 If you are going to use Solarized in Terminal mode (i.e. not in a GUI version 
 like gvim or macvim), **please please please** consider setting your terminal 
-emulator's colorscheme to used the Solarized palette. I've included palettes 
+emulator's colorscheme to use the Solarized palette. I've included palettes 
 for some popular terminal emulator as well as Xdefaults in the official 
 Solarized download available from [Solarized homepage]. If you use 
 Solarized *without* these colors, Solarized will need to be told to degrade its
@@ -118,7 +118,7 @@ If you do use the custom terminal colors, solarized.vim should work out of the
 box for you. If you are using a terminal emulator that supports 256 colors and 
 don't want to use the custom Solarized terminal colors, you will need to use 
 the degraded 256 colorscheme. To do so, simply add the following line *before* 
-the `colorschem solarized` line:
+the `colorscheme solarized` line:
 
     let g:solarized_termcolors=256
 
@@ -132,7 +132,7 @@ Solarized will work out of the box with just the two lines specified above but
 does include several other options that can be set in your .vimrc file.
 
 Set these in your vimrc file prior to calling the colorscheme.
-"
+
     option name               default     optional
     ------------------------------------------------
     g:solarized_termcolors=   16      |   256
@@ -147,7 +147,7 @@ Set these in your vimrc file prior to calling the colorscheme.
 
 ### Option Details
 
-*   g:solarized_termcolors
+*   `g:solarized_termcolors`
 
     This is set to *16* by default, meaning that Solarized will attempt to use 
     the standard 16 colors of your terminal emulator. You will need to set 
@@ -155,7 +155,7 @@ Set these in your vimrc file prior to calling the colorscheme.
     importing one of the many colorscheme available for popular terminal 
     emulators and Xdefaults.
 
-*   g:solarized_termtrans
+*   `g:solarized_termtrans`
 
     If you use a terminal emulator with a transparent background and Solarized 
     isn't displaying the background color transparently, set this to 1 and 
@@ -166,24 +166,24 @@ Set these in your vimrc file prior to calling the colorscheme.
     default as this is almost always the best option. The only exception to 
     this is if the working terminfo file supports 256 colors (xterm-256color).
 
-*   g:solarized_degrade
+*   `g:solarized_degrade`
 
     For test purposes only; forces Solarized to use the 256 degraded color mode 
     to test the approximate color values for accuracy.
 
-*   g:solarized_bold | g:solarized_underline | g:solarized_italic
+*   `g:solarized_bold`, `g:solarized_underline`, `g:solarized_italic`
 
     If you wish to stop Solarized from displaying bold, underlined or 
     italicized typefaces, simply assign a zero value to the appropriate 
     variable, for example: `let g:solarized_italic=0`
 
-*   g:solarized_contrast
+*   `g:solarized_contrast`
 
     Stick with normal! It's been carefully tested. Setting this option to high 
     or low does use the same Solarized palette but simply shifts some values up 
     or down in order to expand or compress the tonal range displayed.
 
-*   g:solarized_visibility
+*   `g:solarized_visibility`
 
     Special characters such as trailing whitespace, tabs, newlines, when
     displayed using `:set list` can be set to one of three levels depending on 
@@ -193,12 +193,12 @@ Toggle Background Function
 --------------------------
 
 Solarized comes with a Toggle Background plugin that by default will map to 
-<F5> if that mapping is available. If it is not available you will need to 
-either map the function manually or change your current <F5> mapping to 
+`<F5>` if that mapping is available. If it is not available you will need to 
+either map the function manually or change your current `<F5>` mapping to 
 something else.
 
 To set your own mapping in your .vimrc file, simply add the following line to 
-support normal, insert and visual mode usage, changing the "<F5>" value to the 
+support normal, insert and visual mode usage, changing the `"<F5>"` value to the 
 key or key combination you wish to use:
 
     call togglebg#map("<F5>")
